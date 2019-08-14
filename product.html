@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+ div
+{
+   background-color:grey;
+   padding:1px;
+   text-align:center;
+}
+#box
+{
+   border:1px solid black;
+   background-color:lightpink;
+   padding:1px;
+}
+.bigbox
+{
+   background-color:lavender;
+   padding:1px;
+}
+label
+{
+   text-align:center;
+   font-size:35px;
+   padding:5px;
+}
+input[type=text]
+{
+   display:inline-block;
+   padding:25px;
+   margin:25px;
+   border:1px solid red;
+   box-sizing:border-box;
+   width:350px;
+}
+input[type=button]
+{
+   background color:blue;
+   padding:5px;
+   font-size:30px;
+   border-style:solid black;
+   background-color:chartreuse;
+}
+table,th,tr
+{
+  border:1px solid black;
+}
+
+</style>
+
+<script>
+   var arr=[];
+function validate()
+{
+ var productname=document.forms["myloginform"]["productname"].value;
+ var productprice=document.forms["myloginform"]["productprice"].value;
+ var productquantity=document.forms["myloginform"]["productquantity"].value;
+
+ if(productname.trim().length==0||productprice.trim().length==0||productquantity.trim().length==0)
+ {
+   console.log("fields cannot be blank")
+ }
+ else
+{
+  var user={"productname":productname,"productprice":productprice,"productquantity":productquantity}
+ arr.push(user)
+}
+}
+function display()
+ {
+document.write("<table border='2'>")
+document.write("<th>productname</th>")
+document.write("<br>")
+document.write("<th>price</th>")
+document.write("<br>")
+document.write("<th>quantity</th>")
+  {
+    for(i=0;i<arr.length;i++)
+    {
+      document.write("<tr>")
+      document.write("<td>")
+      document.write(arr[i].productname)
+      document.write("</td>")
+      document.write("</br>")
+      document.write("<td>")
+      document.write(arr[i].productprice)
+      document.write("</td>")
+      document.write("</br>")
+       document.write("<td>")
+      document.write(arr[i].productquantity)
+      document.write("</td>")
+      document.write("</br>")
+      document.write("</tr>")
+    }
+  }
+}
+</script>
+</head>
+<body>
+<div><div class="bigbox">
+<h1>PRODUCT DETAILS</h1>
+<form name='myloginform'>
+ <label><div id="box"> Enter Product name&nbsp&nbsp&nbsp&nbsp&nbsp
+<input type='text' name='productname'><br><br></div>
+ <div id="box"> Enter Product price&nbsp&nbsp&nbsp&nbsp&nbsp
+<input type='text' name='productprice'><br><br></div>
+ <div id="box"> Enter Product quantity
+<input type='text' name='productquantity'><br><br></div>
+
+  <input type='button' value='Proceed' onclick='validate()'/>
+<input type='button' value='Display' onclick='display()'/></label> 
+</form></div></div>
+</body>
+</html>
+ 
+ 
+

@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+ div
+{
+   background-color:mediumseagreen;
+   padding:75px;
+   text-align:center;
+   font-size:25px;
+}
+#box
+{
+   border:2px solid black;
+   background-color:violet;
+   padding:45px;
+}
+.bigbox
+{
+   background-color:coral;
+   padding:50px;
+label
+{
+   text-align:center;
+   font-size:75px;
+   padding:70px;
+}
+input[type=text]
+{
+   display:inline-block;
+   padding:75px;
+   margin:50px;
+   border:1px solid red;
+   box-sizing:border-box;
+   width:500px;
+}
+input[type=button]
+{
+   padding:50px;
+   font-size:40px;
+   border-style:solid black;
+   background-color:bisque;
+}
+table,th,tr
+{
+  border:1px solid black;
+}
+
+</style>
+
+<script>
+   var arr=[];
+function validate()
+{
+ var categoryname=document.forms["myform"]["categoryname"].value;
+ 
+ if(categoryname.trim().length==0)
+ {
+   console.log("fields cannot be blank")
+ }
+ else
+{
+  var user={"categoryname":categoryname}
+  arr.push(user)
+}
+}
+function display()
+ {
+document.write("<table border='2'>")
+document.write("<th>categoryname</th>")
+  {
+    for(i=0;i<arr.length;i++)
+    {
+      document.write("<tr>")
+      document.write("<td>")
+      document.write(arr[i].categoryname)
+      document.write("</td>")
+      document.write("</br>")
+      document.write("</tr>")
+    }
+  }
+}
+</script>
+</head>
+<body>
+<div><div class="bigg box">
+<h1>CATEGORY DETAILS</h1>
+<form name='myform'>
+ <label><div id="box"> Enter Category name&nbsp&nbsp&nbsp&nbsp
+<input type='text' name='categoryname'><br><br></div>
+
+<input type='button' value='Add' onclick='validate()'/>
+<input type='button' value='Display' onclick='display()'/></label>
+</form></div></div>
+</body>
+</html>}
